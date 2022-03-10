@@ -5,15 +5,19 @@ window.onload = () => {
 function main() {
 
     const body = document.querySelector("body");
-    const btn =document.querySelector("button");
+    const chng =document.querySelector("#change");
     const input = document.querySelector("input");
+    const copy = document.querySelector("#copy");
 
-    btn.addEventListener("click" ,function() {
+    chng.addEventListener("click" ,function() {
         const rgb = generateColor();
 
         body.style.backgroundColor = rgb;
-        input.value = bgcolor;
-        btn.style.backgroundColor = bgcolor;
+        input.value = rgb;
+        chng.style.backgroundColor = rgb;
+    })
+    copy.addEventListener("click", function(){
+        navigator.clipboard.writeText(input.value)
     })
 
 };
@@ -23,5 +27,5 @@ function generateColor() {
      const green = Math.floor(Math.random() * 255);
      const blue = Math.floor(Math.random() * 255);
 
-     return `rgb(${red},${green},${blue})`;
+     return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
 }
