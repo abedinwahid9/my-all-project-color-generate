@@ -6,11 +6,14 @@ function main() {
 
     const body = document.querySelector("body");
     const btn =document.querySelector("button");
+    const input = document.querySelector("input");
 
     btn.addEventListener("click" ,function() {
         const rgb = generateColor();
 
         body.style.backgroundColor = rgb;
+        input.value = bgcolor;
+        btn.style.backgroundColor = bgcolor;
     })
 
 };
