@@ -34,11 +34,57 @@ input {
     padding: 5px;
     margin: 5px 0;
 }
+.toast-mass{
+    
+    position: fixed;
+    z-index: 999;
+    height: 3rem;
+    width: auto;
+    text-align: center;
+    top: 2rem;
+    right: 2rem;
+    background-color: white;
+    color: black;
+    padding: 1rem 2rem;
+    border: 2px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.toast-in{
+    animation: toast-animation-in 0.5s ease;
+}
+.toast-out{
+    animation: toast-animation-out 0.5s ease;
+}
+
+@keyframes toast-animation-in{
+    from{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes toast-animation-out{
+    from{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+}
+
 #copy {
     margin: 0 10px;
     padding: 4px 10px;
     cursor: pointer;
 }
+
 #change {
     margin: 1rem 0;
     padding: 1rem 1.6rem;
